@@ -6,7 +6,7 @@ Simple todo web application with django
 
 Clone this repository
 ```bash
-git clone https://github.com/Cognitus-Automata/todo-app.git
+git clone https://github.com/<your-name>/todo-app.git
 ```
 
 Create virtual environment named env
