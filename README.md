@@ -39,7 +39,7 @@ Create an app directory
 mkdir app
 ```
 
-Create django project (use **todo** as name for the project app)
+Create django project (**todo is the name of the djangoproject app** and **app is the directory** you have created earlier)
 ```bash
 django-admin startproject todo app
 ```
