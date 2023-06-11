@@ -9,6 +9,11 @@ Clone this repository
 git clone https://github.com/<your-name>/todo-app.git
 ```
 
+Cd into the project
+```
+cd todo-app
+```
+
 Create virtual environment named env
 ```bash
 python -m venv venv
