@@ -29,12 +29,12 @@ Install requirements
 pip install -r requirements.txt
 ```
 
-Go in app directory
+Create an app directory
 ```bash
-cd app
+mkdir app
 ```
 
 Create django project (use **todo** as name for the project app)
 ```bash
-django-admin startproject todo .
+django-admin startproject todo app
 ```
