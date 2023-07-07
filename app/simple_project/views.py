@@ -18,7 +18,7 @@ def complete_task(request, todo_id):
     todo.save()
     return redirect('todo_list')
 
-def delete_completed_tasks(request):
-    Simple_Project.objects.filter(completed=True).delete()
-    return redirect('todo_list')
+def completed_tasks(request):
+    completed_tasks = Simple_Project.objects.filter(completed=True)
+    return render(request, 'todo/completed_tasks.html', {'completed_tasks': completed_tasks})
     
