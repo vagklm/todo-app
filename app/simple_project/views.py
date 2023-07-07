@@ -1,7 +1,24 @@
-from django.template import loader
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Simple_Project
 
-def simple_project(request):
-    template = loader.get_template("hello_world.html")
-    return HttpResponse(template.render())
+def todo_list(request):
+    tasks = Simple_Project.objects.all()
+    return render(request, "templates/todo.html", {'tasks': tasks})
+
+def add_task(request):
+    if request.method == "POST":
+        title = request.POST['title']
+        Simple_Project.objects.create(title=title)
+        return redirect('todo')
+    return render(request, 'templates/add_task.html')
+
+def complete_task(request, todo_id):
+    todo = Simple_Project.objects.get(id=todo_id)
+    todo.completed = True
+    todo.save()
+    return redirect('todo')
+
+def delete_completed_tasks(request):
+    Simple_Project.objects.filter(completed=True).delete()
+    return redirect('todo')
+    
