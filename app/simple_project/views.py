@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from .models import Simple_Project
 
 def todo_list(request):
-    tasks = Simple_Project.objects.all()
-    return render(request, "templates/todo.html", {'tasks': tasks})
+    todos = Simple_Project.objects.all()
+    return render(request, "templates/todo.html", {'todos': todos})
 
 def add_task(request):
     if request.method == "POST":
