@@ -14,10 +14,6 @@
       <li>No todos yet.</li>
     {% endfor %}
   </ul>
-  <form action="{% url 'delete_completed_tasks' %}" method="post">
-    {% csrf_token %}
-    <input type="submit" value="Delete Completed">
-  </form>
   <hr>
   <a href="{% url 'add_task' %}">Add Todo</a>
   <hr>
