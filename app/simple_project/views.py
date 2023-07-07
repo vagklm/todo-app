@@ -20,5 +20,5 @@ def complete_task(request, todo_id):
 
 def completed_tasks(request):
     completed_tasks = Simple_Project.objects.filter(completed=True)
-    return render(request, 'todo/completed_tasks.html', {'completed_tasks': completed_tasks})
+    return render(request, 'completed_tasks.html', {'completed_tasks': completed_tasks})
     
