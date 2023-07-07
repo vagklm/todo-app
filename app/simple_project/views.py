@@ -3,7 +3,7 @@ from .models import Simple_Project
 
 def todo_list(request):
     todos = Simple_Project.objects.all()
-    return render(request, "templates/todo.html", {'todos': todos})
+    return render(request, 'templates/todo.html', {'todos': todos})
 
 def add_task(request):
     if request.method == "POST":
