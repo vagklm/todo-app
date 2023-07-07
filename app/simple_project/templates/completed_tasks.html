@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Completed Todos</h2>
+  {% if completed_tasks %}
+    <ul>
+      {% for todo in completed_tasks %}
+        <li>{{ todo.title }}</li>
+      {% empty %}
+        <li>No completed todos yet.</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No completed todos yet.</p>
+  {% endif %}
+  <hr>
+  <a href="{% url 'todo' %}">Back to Todo List</a>
+{% endblock %}
