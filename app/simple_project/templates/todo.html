@@ -9,7 +9,7 @@
           <del>{{ todo.title }}</del>
         {% else %}
           {{ todo.title }}
-          <a href="{% url 'complete_todo' todo.id %}">Complete</a>
+          <a href="{% url 'complete_taks' todo.id %}">Complete</a>
         {% endif %}
         <input type="checkbox" {% if todo.completed %}checked{% endif %} disabled style="float: right;">
       </li>
