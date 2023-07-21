@@ -5,11 +5,13 @@
   <ul>
     {% for todo in todos %}
       <li{% if todo.completed %} class="completed"{% endif %}>
-        {{ todo.title }}
-        {% if not todo.completed %}
-          <a href="{% url 'complete_task' todo.id %}">Complete</a>
+        {% if todo.completed %}
+          <del>{{ todo.title }}</del>
+        {% else %}
+          {{ todo.title }}
+          <a href="{% url 'complete_todo' todo.id %}">Complete</a>
         {% endif %}
-        <input type="checkbox" {% if todo.completed %}checked{% endif %} disabled>
+        <input type="checkbox" {% if todo.completed %}checked{% endif %} disabled style="float: right;">
       </li>
     {% empty %}
       <li>No todos yet.</li>
