@@ -11,7 +11,6 @@
           {{ todo.title }}
           <a href="{% url 'complete_task' todo.id %}">Complete</a>
         {% endif %}
-        <input type="checkbox" {% if todo.completed %}checked{% endif %} disabled style="float: right;">
       </li>
     {% empty %}
       <li>No todos yet.</li>
